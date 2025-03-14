@@ -1,0 +1,9 @@
+google maps for location
+filters on mobile view to check for mobile view 
+subject filter correction 
+navbar in desktop and mobile view - done
+handle payment according to payment details and make hasPaid to false
+payment plan according leads -> adjust view details button as when clicked forst dialog box should open then assign leads api should be clicked\
+FIndJOB Page line 175 dialog box fix
+Need to change in payment logic now only
+password hashing logic

@@ -1,0 +1,257 @@
+.applyjob {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Plus Jakarta Sans, sans-serif;
+  margin: 20px;
+}
+
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.img-container img {
+  border-radius: 12px;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title {
+    width: 66.66%;
+  }
+
+  .btn-container {
+    width: 33.33%;
+    text-align: right;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10px;
+  }
+
+  .col1 {
+    flex: 0 0 auto;
+    width: 66.6%;
+  }
+
+  .col2 {
+    flex: 0 0 auto;
+    width: 33.3%;
+    padding-left: 40px;
+  }
+}
+@media only screen and (min-width: 668px) {
+  .job-overview .table-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .job-overview .table-row .col {
+    width: 50%;
+  }
+  .media-container div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 668px) {
+  .col1 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .col2 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .job-overview .table-row .col .content {
+    width: 100%;
+  }
+}
+.col {
+  margin-bottom: 20px;
+}
+.title-container {
+  padding: 20px;
+}
+
+.title h3,
+h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  word-wrap: break-word;
+  color: #05264e;
+}
+
+.briefcase,
+.time {
+  font-size: 12px;
+  color: #a0abb8;
+  display: inline-block;
+  padding-left: 15px;
+  margin-top: 0;
+}
+.time {
+  margin-left: 10px;
+}
+.apply-btn {
+  color: #fff;
+  border: 1px solid;
+  outline: transparent;
+  background-color: #3c65f5;
+  border-radius: 7px;
+  padding: 10px 35px;
+}
+
+/* .row {
+    margin-top: 70px;
+} */
+
+.job-overview {
+  border: thin solid #e0e6f7;
+  border-radius: 8px;
+  padding: 20px 30px 30px;
+  margin-bottom: 50px;
+}
+.job-overview > h5,
+.jobs-card > h5 {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dee2e6;
+  color: #05264e;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.job-overview .table-row .col {
+  display: flex;
+  align-items: center;
+  /* width: 50%; */
+}
+.col .content {
+  display: flex;
+  margin-left: 10px;
+}
+.col .content > * {
+  display: inline-block;
+}
+.col .content span {
+  min-width: 120px;
+  max-width: 120px;
+}
+.col .content img {
+  height: 100%;
+  width: 100%;
+}
+
+.address-card,
+.jobs-card {
+  border: 1px solid #e0e6f7;
+  padding: 25px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 40px;
+}
+
+.address-title {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+.address-location {
+  display: flex;
+  align-items: center;
+  /* gap:10px; */
+}
+.address-title div span {
+  min-width: 120px;
+  max-width: 120px;
+}
+.map {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.about-company p {
+  font-size: 16px;
+  line-height: 200%;
+  color: #4f5e64;
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+ul {
+  list-style-type: disc;
+}
+ul {
+  line-height: 32px;
+  font-size: 16px;
+  color: #4f5e64;
+}
+.col1-footer {
+  display: inline-block;
+  padding-left: 26px;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+.col1-footer span {
+  position: relative;
+  background-color: #fff;
+  font-size: 18px;
+  color: #4f5e64;
+  line-height: 28px;
+  font-weight: 700;
+}
+.col1-footer span::before,
+.col1-footer span::after {
+  content: "";
+  height: 1px;
+  border-top: 2px solid #a5a5a5;
+  width: 31px;
+  position: absolute;
+  top: 13px;
+}
+.col1-footer span::after {
+  right: -37px;
+}
+.col1-footer span::before {
+  left: -36px;
+}
+.media {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.media-icon {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.jobcard-container {
+  display: flex;
+  width: 100%;
+  padding: 0 0 15px;
+  border-bottom: 1px solid #e0e6f7;
+}
+.jobcard-container .jobimage-1 {
+  min-width: 60px;
+  padding-right: 10px;
+}
+.jobcard-container .jobcard-2 {
+  width: 100%;
+  margin-top: -5px;
+}

@@ -1,0 +1,18 @@
+body {
+  color: #05264e;
+}
+
+.pricing-card {
+  border: 1px solid #e0e6f7 !important;
+  padding: 35px !important;
+}
+
+.list-pricing li {
+  display: inline-block;
+  background: url("https://jthemes.com/themes/wp/jobbox/wp-content/themes/jobbox/assets/imgs/template/icons/check-circle.svg")
+    no-repeat left;
+  padding: 4px 0px 4px 35px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
