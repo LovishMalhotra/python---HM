@@ -39,6 +39,9 @@ app.use(
     secret: "my-secret-key",
     resave: false,
     saveUninitialized: true,
+    store: MongoStore.create({
+      mongoUrl: "mongodb+srv://lovishmalhotra2441:Lovish%402441@cluster0.ipj4yj6.mongodb.net/IMhometutor?retryWrites=true&w=majority"
+    }) ,
     cookie: {
       secure: false,
       maxAge: 24 * 60 * 60 * 1000, // 1 day
@@ -79,3 +82,5 @@ async function main() {
 app.listen(port, () => {
   console.log(`server running at port ${port}`);
 });
+
+module.exports = app;
