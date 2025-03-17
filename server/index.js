@@ -30,7 +30,7 @@ const port = 8080;
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://client-kq9gg5smk-lovishmalhotras-projects.vercel.app/",
   })
 );
 
