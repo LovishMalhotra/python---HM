@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "buildCommand": "npm install && npm install react-scripts && npm run build"
+        }
+      }
+    ],
+    "routes": [
+      { "src": "/.*", "dest": "/index.html" }
+    ]
+  }
+  
