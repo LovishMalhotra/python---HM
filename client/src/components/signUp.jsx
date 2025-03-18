@@ -37,7 +37,7 @@ const SignIn = () => {
     }
 
     try {
-      const data = await axios.post("/auth/login", loginData);
+      const data = await axios.post("https://server-snowy-psi-47.vercel.app/auth/login", loginData);
 
       if (data.status === 200) {
         alert("Loged in successfully");
@@ -194,7 +194,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await axios.post("/auth/signup", formData);
+      const response = await axios.post("https://server-snowy-psi-47.vercel.app/auth/signup", formData);
 
       if (response.status === 200) {
         alert("Successfully SignedUp");

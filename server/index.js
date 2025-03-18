@@ -30,7 +30,9 @@ const port = 8080;
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: "https://client-kq9gg5smk-lovishmalhotras-projects.vercel.app/",
+    origin: "https://client-kq9gg5smk-lovishmalhotras-projects.vercel.app",  // ✅ No trailing slash
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
   })
 );
 
