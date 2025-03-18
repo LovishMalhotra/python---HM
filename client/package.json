@@ -1,7 +1,7 @@
 {
   "name": "job",
   "version": "0.1.0",
-  "proxy": "https://server-4lksmenx0-lovishmalhotras-projects.vercel.app/",
+  "proxy": "https://server-snowy-psi-47.vercel.app/",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
