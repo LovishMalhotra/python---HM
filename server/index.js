@@ -28,13 +28,26 @@ const app = express();
 const port = 8080;
 
 app.use(bodyParser.json());
+const allowedOrigins = [
+  "http://localhost:3000", // For local testing
+  "https://client-one-beige.vercel.app" // Your deployed client
+];
+
 app.use(
   cors({
-    origin: "https://client-kq9gg5smk-lovishmalhotras-projects.vercel.app",  // ✅ No trailing slash
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
   })
 );
+
 
 app.use(
   session({
