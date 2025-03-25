@@ -28,26 +28,27 @@ const app = express();
 const port = 8080;
 
 app.use(bodyParser.json());
-const allowedOrigins = [
-  "http://localhost:3000", // For local testing
-  "https://client-one-beige.vercel.app" // Your deployed client
-];
+// const allowedOrigins = [
+//   "http://localhost:3000", // For local testing
+//   "https://client-one-beige.vercel.app",
+//   "https://client-1tq5fosm5-lovishmalhotras-projects.vercel.app" // Your deployed client
+// ];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
-  })
-);
-
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (!origin || allowedOrigins.includes(origin)) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true
+//   })
+// );
+app.use(cors({ origin: "*", credentials: true }));
 
 app.use(
   session({
@@ -55,8 +56,9 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-      mongoUrl: "mongodb+srv://lovishmalhotra2441:Lovish%402441@cluster0.ipj4yj6.mongodb.net/IMhometutor?retryWrites=true&w=majority"
-    }) ,
+      mongoUrl:
+        "mongodb+srv://lovishmalhotra2441:Lovish%402441@cluster0.ipj4yj6.mongodb.net/IMhometutor?retryWrites=true&w=majority",
+    }),
     cookie: {
       secure: false,
       maxAge: 24 * 60 * 60 * 1000, // 1 day
