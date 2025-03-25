@@ -1,23 +1,12 @@
-
 {
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "npm install && npm run build",
-        "outputDirectory": "build"
-      }
+      "src": "index.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/auth/.*",
-      "dest": "https://server-snowy-psi-47.vercel.app/auth/:splat",
-      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
-    },
-    { "src": "/.*", "dest": "/index.html" }
+    { "src": "/.*", "dest": "/index.js" }
   ]
 }
-
