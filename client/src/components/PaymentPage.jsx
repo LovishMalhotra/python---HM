@@ -21,7 +21,7 @@ const PaymentPage = () => {
       // Send both amount and plan to backend for validation and order creation
       const {
         data: { order },
-      } = await axios.post("/payment/checkout", { amount, plan: planName });
+      } = await axios.post("https://server-snowy-psi-47.vercel.app/payment/checkout", { amount, plan: planName });
 
       const options = {
         key,
@@ -51,7 +51,7 @@ const PaymentPage = () => {
           const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response;
           try {
             // Send payment verification data along with the selected plan to backend
-            const res = await axios.post("/payment/paymentVerification", {
+            const res = await axios.post("https://server-snowy-psi-47.vercel.app/payment/paymentVerification", {
               razorpay_order_id,
               razorpay_payment_id,
               razorpay_signature,

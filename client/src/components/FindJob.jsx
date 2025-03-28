@@ -175,7 +175,7 @@ const FindJob = () => {
       /* NEED NAVIGATE BOX THAT YOU REALLY WANT TO APPLY FOR JOB*/
       try {
         // Step 1: Assign Lead Before Navigating
-        const response = await axios.post("/payment/assignLead", jobId);
+        const response = await axios.post("https://server-snowy-psi-47.vercel.app/payment/assignLead", jobId);
         console.log(response)
         if (response.data.success) {
           // Step 2: Navigate to Apply Job Page

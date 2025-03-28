@@ -96,7 +96,7 @@ const CompanyRegister = () => {
       return;
     }
     try {
-      const response = await axios.post("/jobs/postJob", formData);
+      const response = await axios.post("https://server-snowy-psi-47.vercel.app/jobs/postJob", formData);
 
       if (response.status === 201) {
         alert("Successfully registered your job");
@@ -400,7 +400,7 @@ const CompanyLogin = () => {
     event.preventDefault();
 
     try {
-      const data = await axios.post("/jobs/companyLogin", loginData);
+      const data = await axios.post("https://server-snowy-psi-47.vercel.app/jobs/companyLogin", loginData);
       if (data.status === 200) {
         alert("Successfully Loged into your job");
         console.log("Loged in");

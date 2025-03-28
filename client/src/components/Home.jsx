@@ -21,7 +21,7 @@ const Home = () => {
       return;
     }
     try {
-      const response = await axios.post("/query/contact", query);
+      const response = await axios.post("https://server-snowy-psi-47.vercel.app/query/contact", query);
 
       if (response.status === 201) {
         alert("We will call you soon");
