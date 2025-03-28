@@ -86,7 +86,7 @@ const FindJob = () => {
     e.preventDefault();
 
     try {
-      const searchResponse = await axios.get("/search", {
+      const searchResponse = await axios.get("https://server-snowy-psi-47.vercel.app/search", {
         params: {
           subject:
             searchParams.subject === 0
@@ -112,7 +112,7 @@ const FindJob = () => {
       try {
         let response;
 
-        const allJobsResponse = await axios.get("/jobs/allJobs");
+        const allJobsResponse = await axios.get("https://server-snowy-psi-47.vercel.app/jobs/allJobs");
         response = allJobsResponse.data;
 
         if (subjectFilter) {
@@ -149,7 +149,7 @@ const FindJob = () => {
 
     const fetchHasPaid = async () => {
       try {
-        const response = await axios.get("/payment/status");
+        const response = await axios.get("https://server-snowy-psi-47.vercel.app/payment/status");
         // console.log(response);
         setHasPaid(response.data.hasPaid);
       } catch (error) {

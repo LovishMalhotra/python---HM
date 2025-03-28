@@ -27,7 +27,7 @@ function Applyjob() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`/jobs/?jobId=${jobId}`);
+        const response = await axios.get(`https://server-snowy-psi-47.vercel.app/jobs/?jobId=${jobId}`);
 
         if (response.status === 200) {
           window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
