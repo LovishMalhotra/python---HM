@@ -6,6 +6,10 @@ const Razorpay = require("razorpay");
 const cors = require("cors");
 const MongoStore = require("connect-mongo");
 
+
+
+require('dotenv').config();
+
 // import paymentRoute from "./routes/Payment.js";
 
 const authRouters = require("./routes/Auth.js");
@@ -14,8 +18,8 @@ const searchRouters = require("./routes/Search.js");
 const queryRouters = require("./routes/Query.js");
 const paymentRoute = require("./routes/Payment.js");
 
-const RAZORPAY_API_KEY = "rzp_test_OZaIqhkK2kxE9F";
-const RAZORPAY_API_SECRET = "PG3TkQ6Kwp6yOZkqJT3Xtl9M";
+const RAZORPAY_API_KEY = process.env.RAZORPAY_API_KEY;
+const RAZORPAY_API_SECRET = process.env.RAZORPAY_API_SECRET;
 
 const instance = new Razorpay({
   key_id: RAZORPAY_API_KEY,
@@ -25,7 +29,8 @@ const instance = new Razorpay({
 module.exports = instance;
 
 const app = express();
-const port = 8080;
+
+const PORT = process.env.PORT || 8081;
 
 app.use(bodyParser.json());
 // const allowedOrigins = [
@@ -56,8 +61,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-      mongoUrl:
-        "mongodb+srv://lovishmalhotra2441:Lovish%402441@cluster0.ipj4yj6.mongodb.net/IMhometutor?retryWrites=true&w=majority",
+      mongoUrl: process.env.MONGODB
     }),
     cookie: {
       secure: false,
@@ -91,13 +95,13 @@ app.get("/payment/getKey", (req, res) =>
 main().catch((err) => console.log(`Unable to connect ${err}`));
 async function main() {
   await mongoose.connect(
-    "mongodb+srv://lovishmalhotra2441:Lovish%402441@cluster0.ipj4yj6.mongodb.net/IMhometutor?retryWrites=true&w=majority"
+    process.env.MONGODB
   );
   console.log("Database Connected");
 }
 
-app.listen(port, () => {
-  console.log(`server running at port ${port}`);
+app.listen(PORT, () => {
+  console.log(`server running at port ${PORT}`);
 });
 
 module.exports = app;
