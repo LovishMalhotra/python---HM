@@ -6,3 +6,4 @@ payment plan according leads -> adjust view details button as when clicked forst
 FIndJOB Page line 175 dialog box fix
 Need to change in payment logic now only
 password hashing logic
+banner image to be corrected 

@@ -44,9 +44,11 @@ const FindJob = () => {
     if (query.length > 2) {
       try {
         const response = await fetch(
-          `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${query}&format=json&origin=*`
+          `https://www.khanacademy.org/api/v1/topic/math`
+          // `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${query}&format=json&origin=*`
         );
         const data = await response.json();
+        console.log(data);
         setSubjectSuggestions(data.query.search);
         setShowSubjectSuggestions(true);
       } catch (error) {
